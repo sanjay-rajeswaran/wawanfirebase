@@ -1,6 +1,6 @@
 from django.conf.urls import url
 from . import views
-from django.conf import settings
+#from django.conf import settings
 
 urlpatterns = [
 	url(r'^$', views.form),
@@ -9,7 +9,7 @@ urlpatterns = [
    	url(r'^d',views.firedelete, name= 'delete'),
 ]
 
-if not settings.DEBUG:
-    urlpatterns += patterns('',
-        (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
-    )
+#if not settings.DEBUG:
+#    urlpatterns += patterns('',
+#        (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+#    )
