@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Firebase Sample</title>
+ 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <style type="text/css">
+    #contacts p, 
+    #contacts p.lead{
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <center>
+    <h1>Student Database Using Firebase Backend</h1>
+  </center>
+    <hr/>
+    <div class="row">
+      <div class="col-md-6">
+        <form action="/s/" id="student_form" method="post">
+        {% csrf_token %}
+        <h2>Create or Update Student Data</h2>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="sname" required placeholder="Enter Student name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="semail" required placeholder="Enter Email">
+          </div>
+          <div class="form-group">
+            <label for="school">School</label>
+            <input type="text" class="form-control" id="school" name="sschool" placeholder="Enter School Name">
+          </div>
+          <div class="form-group">
+            <label for="grade">Grade</label>
+            <input type="text" class="form-control" id="grade" name="sgrade" placeholder="Enter Student Grade">
+          </div>
+          <button type="create" class="btn btn-primary addValue" form="student_form" >Create or Update</button>
+        </form>
+      </div>
+
+
+      <div class="col-md-6">
+        <form action="/v/" method="post" id="student_form1">
+          {% csrf_token %}
+        <ul id="firebaseresult" class="list-group">
+          <h2>View Student Data</h2>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="sname" id="name1" placeholder="Enter Student Name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="semail" name="semail" required placeholder="Enter Email">
+          </div>
+          <button type="view" class="btn btn-primary addValue" form="student_form1">View</button>
+        </ul>
+        </form>
+      </div>
+
+
+    </div>
+
+        <hr/>
+
+<div class="col-md-6">
+        <form action="/d/" method="post" id="student_form2">
+          {% csrf_token %}
+        <ul id="firebaseresult" class="list-group">
+          <h2>Delete Student Data</h2>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="sname" id="name1" placeholder="Enter Student Name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="semail" name="semail" required placeholder="Enter Email">
+          </div>
+          <button type="delete" class="btn btn-primary addValue" form="student_form2">Delete</button>
+        </ul>
+        </form>
+      </div>
+
+  </div>
+
+</body>
+</html>
