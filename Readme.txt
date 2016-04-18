@@ -2,4 +2,7 @@
 
 #this is a sample project that i used to learn firebase
 
+<<<<<<< HEAD
 master changes
+=======
+>>>>>>> sample
