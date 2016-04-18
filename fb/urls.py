@@ -8,8 +8,3 @@ urlpatterns = [
    	url(r'^v',views.fireview, name= 'view'),
    	url(r'^d',views.firedelete, name= 'delete'),
 ]
-
-#if not settings.DEBUG:
-#    urlpatterns += patterns('',
-#        (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
-#    )
